@@ -1,0 +1,3 @@
+part-file,bambu,bambu-studio.exe
+part-file,prusa,prusa-slicer.exe
+laser-file,xtool,xTool Creative Space.exe

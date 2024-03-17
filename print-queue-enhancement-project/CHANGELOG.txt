@@ -1,0 +1,94 @@
+Changelog for Print Queue Manager
+
+
+v1.0.1 "Catalyst"
+
+Added:
+	- Return home path as Downloads if the home-path.txt cannot be
+	  opened when finding set home path
+
+
+v1.0.0-beta
+
+Added:
+	- Fallback home path set to Downloads
+	- Settings menu
+ 	  - Can be found in more options menu
+
+
+v0.4.0
+
+Added:
+	- Enter key allows users to search pasted path on address bar
+	- Files that are moved to the .complete folder will be hidden
+	- A button for more options menu (e.g. show hidden files, etc)
+	- Option to show hidden items in more options menu
+	- Option to open file manager in more options menu
+	- Address bar will clear when the entry is being searched
+	- File with formats that are not listed in the following
+	  config files will be hidden:
+	  - part-file-formats.txt
+	  - laser-file-formats.txt
+	- Files with names that begins with . or ends with ~ will be
+	  considered as a special item and will be hidden
+
+Changed:
+	- The forward button now works when the user goes back once
+	- Files will only be copied to the .complete folder once
+	  an application has been chosen to open the file
+
+
+v0.3.1
+
+Added:
+	- Once the user chooses the application to open, the frame for selecting
+	  an application will close by itself
+
+
+v0.3.0
+
+Added:
+	- Allowing user to choose apps to open based on the type of
+	  file format on a new frame
+	- New ways to configure app via config folder:
+	  - application-lists.txt (allows users to add apps to open with)
+	  - laser-file-formats.txt (allows users to specify what are the formats
+	    			    that are related to files that require laser
+				    services)
+	  - part-file-formats.txt (allows users to specify what are the formats
+	    			   that are related to files that are sliced/
+				   3D model files)
+	- Once the .complete folder has been created and file has been placed
+	  into the folder, the canvas will update
+	- Input sanitization of strings that ends with a newline from
+	  configuration files
+	  - Text editors that terminates a text using a newline \n will
+	    cause some issues by interfering with the text that was
+	    intended to be read
+
+Changed:
+	- File names longer than 64 characters will now truncate with the
+	  extra 3 characters replaced with ellipses
+	- Configuration of app based on file format will be split into
+	  files that require laser services or files that are sliced/3D model
+	  files
+
+Removed:
+	- Opening a file based on set application
+	  - Now users will have to choose an application to
+	    open with
+	- Removal of format tracking solely on file formats
+
+
+v0.2.0
+
+Added:
+	- Scrollbar for scrolling when items exceeds the size of the canvas
+	- Canvas within frame
+
+Changed:
+	- Disabled window size change
+	- Items that needs to be updated such as buttons will now be added to
+	  canvas instead of frame
+	  - However, the top section that contains the Home, Back, Forward,
+	    URL bar and Go will be generated on the frame as they are static
